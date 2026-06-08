@@ -47,7 +47,6 @@ This project demonstrates a **static webpage design** with modern UI/UX principl
 - ✨ **Ambient Orbs** - Floating light effects in background
 - 🎨 **Gradient Elements** - Beautiful color transitions
 - 🔘 **Animated Buttons** - Hover effects with transforms
-- 📱 **Fully Responsive** - Works on all screen sizes
 
 ---
 
