@@ -1,0 +1,1042 @@
+/* 1. UNIVERSAL SETUP & LAYOUT ENGINE       */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body Styles - Background Image with Gradient Overlay */
+body {
+    background: linear-gradient(rgba(12, 19, 26, 0.5), rgba(12, 19, 26, 0.65)),
+        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1400') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 2. REAL GLASS MORPHIC CORE FRAMEWORK */
+
+/* Glassmorphism Effect - Applied to Cards, Header, Footer */
+.glass-card,
+.main-header,
+.package-card,
+.testimonial-card,
+.main-footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, background 0.3s;
+}
+
+/* 3. AMBIENT LIGHT ORBS */
+
+/* Background Wrapper for Orbs */
+.bg-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 2px;
+}
+
+/* Orb Base Styles - Floating Light Effects */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+/* Individual Orbs with Different Positions and Colors */
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #1e40af;
+    top: -10%;
+    left: -10%;
+}
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: #0369a1;
+    bottom: 10%;
+    right: -10%;
+}
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: #0284c7;
+    top: 40%;
+    left: 50%;
+}
+
+/* 4. TOP FIXED/STICKY NAVIGATION */
+
+/* Main Header - Sticky Navigation Bar */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    margin: 15px 20px;
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+}
+
+/* Logo Styles */
+.main-header .logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-header .logo i {
+    color: #38bdf8;
+    font-size: 1.3rem;
+}
+
+/* Navigation Links Styles */
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 24px;
+    font-weight: 500;
+    padding: 6px 0;
+    transition: color 0.2s;
+}
+
+/* Navigation Links Hover & Active State */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #38bdf8;
+}
+
+/* 5. HERO SECTION */
+
+/* Main Hero Banner Area */
+.hero-section {
+    height: calc(100vh - 110px);
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 0 20px 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Hero Overlay Container */
+.hero-overlay {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Content Centered */
+.hero-content {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Centered Hero Content Variant */
+.hero-center {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 2rem 20px;
+}
+
+/* Hero Badge - Explorer Kit Approved Tag */
+.hero-content .badge {
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+/* Hero Main Heading */
+.hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Description Text */
+.hero-content p {
+    font-size: 1rem;
+    color: #f1f5f9;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Lead Text */
+.hero-lead {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Hero Call to Action Button Container */
+.hero-cta {
+    margin-top: 1.25rem;
+}
+
+/* Hero Button Styles */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(56, 189, 248, 0.95);
+    backdrop-filter: blur(4px);
+    color: #0c131a;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hero Button Hover Effect */
+.hero-btn:hover {
+    background: #ffffff;
+    color: #0c131a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Fade Up Animation Keyframes */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade Up Animation Class */
+.fade-up {
+    animation: fadeUp 0.8s ease both;
+}
+
+
+/* 6. COMMON SECTIONS STYLES  */
+
+/* Container for All Sections */
+.section-container {
+    max-width: 1300px;
+    margin: 0 auto 70px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Section Title Styles */
+.section-title {
+    margin-bottom: 35px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 14px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-title p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-top: 4px;
+}
+
+/* 7. PACKAGES GRID - PREMIUM CARDS */
+
+/* Grid Layout for Package Cards */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Individual Package Card */
+.package-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Package Card Hover Effect */
+.package-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+/* Card Image Box */
+.card-image-box {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+/* Card Image Styles */
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Price Tag on Card */
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(12, 19, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #38bdf8;
+    backdrop-filter: blur(8px);
+}
+
+/* Card Body Content */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Card Heading */
+.card-body h3 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* Duration Text */
+.card-body .duration {
+    font-size: 0.8rem;
+    color: #38bdf8;
+    display: flex;
+    text-align: center;
+    padding: 0px 58px;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+/* Description Text */
+.card-body .desc {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    line-height: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Inclusions Box - Hotel, Meals, Guide, Flight */
+.inclusions-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 45px;
+    border-radius: 8px;
+    margin-top: auto;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.inclusions-box span {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inclusions-box span i {
+    color: #38bdf8;
+    font-size: 0.85rem;
+}
+
+/* Book Now Button */
+.book-now-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.book-now-btn:hover {
+    background: rgba(56, 189, 248, 0.3);
+    border-color: #38bdf8;
+}
+
+/* 8. DESTINATIONS GRID */
+
+/* Grid Layout for Destinations */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Destination Item */
+.dest-item {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+/* Destination Image */
+.dest-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+/* Destination Image Hover Effect */
+.dest-item:hover img {
+    transform: scale(1.06);
+    opacity: 0.85;
+}
+
+/* Destination Info Overlay */
+.dest-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(12, 19, 26, 0.85), transparent);
+    backdrop-filter: blur(2px);
+}
+
+.dest-info h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.dest-info span {
+    font-size: 0.75rem;
+    color: #38bdf8;
+}
+
+/* 9. WHY CHOOSE US SECTION */
+
+/* Section Container for Why Choose Us */
+.section-container-choose {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+/* Features Grid Layout */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual Feature Card */
+.feature-card {
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+}
+
+/* Feature Icon */
+.feature-card i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+/* Feature Heading */
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Feature Description */
+.feature-card p {
+    font-size: 0.85rem;
+    color: #94a3
+}
+
+/* 10. VERTICAL STACK LAYOUT (PLANNER)  */
+
+/* Vertical Stack Container */
+.vertical-stack-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Form and Map Wrappers */
+.form-wrapper-full,
+.map-wrapper-full {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-wrapper-full h3,
+.map-wrapper-full h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Form Row Layout */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Form Group Spacing */
+.interactive-booking-form .form-group {
+    margin-bottom: 16px;
+}
+
+/* Form Labels */
+.interactive-booking-form label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Form Inputs and Selects */
+.interactive-booking-form select,
+.interactive-booking-form input {
+    width: 100%;
+    padding: 11px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    outline: none;
+    backdrop-filter: blur(5px);
+}
+
+/* Select Option Styles */
+.interactive-booking-form select option {
+    background: #111827;
+    color: #ffffff;
+}
+
+/* Live Pricing Panel */
+.live-pricing-panel {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px dashed rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 24px 0;
+}
+
+/* Invoice Row */
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+/* Total Row in Invoice */
+.invoice-row.total-gold-row {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Amount Badge */
+.amount-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+/* Gold Currency Text */
+.gold-currency,
+.gold-value-digits {
+    color: #facc15;
+}
+
+/* Dashboard Submit Button */
+.dashboard-submit-glow-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-submit-glow-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
+
+/* 11. MAP SECTION */
+
+/* Map Container */
+.map-container-mock-full {
+    height: 320px;
+    background: radial-gradient(circle at center, rgba(20, 35, 50, 0.5) 0%, rgba(10, 15, 25, 0.7) 100%);
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+/* Grid Overlay on Map */
+.map-grid-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+}
+
+/* Map Nodes (Location Points) */
+.map-node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #38bdf8, 0 0 30px #38bdf8;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.map-node:hover {
+    transform: scale(1.3);
+}
+
+/* Node Label on Hover */
+.map-node::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #bae6fd;
+    background: rgba(12, 19, 26, 0.85);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+}
+
+/* Individual Node Positions */
+.node-london {
+    top: 25%;
+    left: 15%;
+}
+.node-ny {
+    top: 45%;
+    left: 60%;
+}
+.node-tokyo {
+    top: 35%;
+    left: 85%;
+}
+
+/* Connecting Lines between Nodes */
+.connecting-vector-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Status Indicator */
+.status-indicator {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Pulse Dot Animation */
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22c55e;
+    animation: beaconPulse 1.8s infinite ease-in-out;
+}
+
+/* Beacon Pulse Animation */
+@keyframes beaconPulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+        box-shadow: 0 0 14px #22c55e;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+}
+
+
+/* 12. BOOKING SECTION */
+
+.booking-section {
+    padding: 50px 5%;
+    background: transparent;
+}
+
+/* Booking Form Wrapper */
+.booking-wrapper {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Input and Select Styles */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.3);
+    color: white;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+/* Input Focus Effect */
+input:focus, select:focus {
+    outline: none;
+    border-color: #38bdf8;
+    background: rgba(15, 23, 42, 0.6);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+
+/* 13. TESTIMONIALS SECTION */
+
+.testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 64px;
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card {
+    padding: 24px;
+}
+
+.testimonial-card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Rating Stars */
+.rating-stars {
+    color: #fbbf24;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+/* Review Text */
+.review-text {
+    font-size: 0.85rem;
+    line-height: 1.45rem;
+    color: #e2e8f0;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* User Meta Information */
+.user-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* User Avatar Image */
+.user-meta img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-meta h4 {
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.user-meta span {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+}
+
+
+/* 14. FOOTER SECTION */
+
+.main-footer {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 40px 20px 20px;
+    padding: 50px 50px;
+}
+
+/* Footer Columns Layout */
+.footer-top-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Footer Brand Section */
+.footer-brand {
+    max-width: 300px;
+    padding-left: 30px;
+}
+
+.footer-brand h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-brand p {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
+
+/* Footer Link Groups */
+.footer-link-group {
+    padding-right: 30px;
+}
+
+.footer-link-group:last-child {
+    margin-bottom: 30px;
+}
+
+.footer-link-group h5 {
+    color: #ffffff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.footer-link-group a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.footer-link-group a:hover {
+    color: #38bdf8;
+}
+
+/* Social Links */
+.social-links-wrapper a {
+    color: #cbd5e1;
+    font-size: 1rem;
+    margin-left: 16px;
+    transition: color 0.2s;
+}
+
+.social-links-wrapper a:hover {
+    color: #ffffff;
+}
+
+
+/* 15. MEDIA QUERIES (RESPONSIVE)  */
+
+/* Tablet and Medium Screen Adjustments */
+@media (max-width: 950px) {
+    .vertical-stack-layout {
+        gap: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .main-header {
+        padding: 14px 20px;
+    }
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .testimonials-container {
+        padding: 0 20px;
+    }
+    .testimonials-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
