@@ -70,15 +70,6 @@ This project demonstrates a **static webpage design** with modern UI/UX principl
 
 ---
 
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Target Device |
-|------------|---------------|
-| 950px | Tablet Landscape |
-| 900px | Tablet Portrait / Mobile |
-
----
-
 ## 🎨 Color Palette
 
 | Color | Hex Code | Usage |
