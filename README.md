@@ -14,6 +14,13 @@ This project demonstrates a **static webpage design** with modern UI/UX principl
 
 ---
 
+## 🎯 🔄 Live Demo
+🌐 Live Demo URL: 
+
+    https://decodelabs-task-1.vercel.app/
+
+---
+
 ## ✅ Project Requirements Met
 
 | Requirement | Status |
