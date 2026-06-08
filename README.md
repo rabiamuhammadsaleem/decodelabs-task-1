@@ -8,7 +8,6 @@ A stunning, glassmorphic travel agency landing page built as **Project 1** for D
 
 This project demonstrates a **static webpage design** with modern UI/UX principles including:
 - Glassmorphism design language
-- Fully responsive layout
 - Semantic HTML structure
 - CSS Grid & Flexbox mastery
 - Accessible components
